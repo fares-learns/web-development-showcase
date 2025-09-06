@@ -1,0 +1,26 @@
+# My Web Games Portfolio
+
+Welcome to my web portfolio! This repository contains a collection of small games I created to learn and practice HTML, CSS, and JavaScript.
+
+## About
+
+These games are simple projects that helped me improve my front-end development skills. Each game demonstrates different concepts such as DOM manipulation, event handling, styling, and game logic.
+
+## Games Included
+
+- Game 1: [Name or brief description]
+- Game 2: [Name or brief description]
+- Game 3: [Name or brief description]
+- ...and more!
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+
+## How to Run
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/fares-learns/web-development-showcase.git
