@@ -1,20 +1,23 @@
-/** @format */
-
 let buttonColors = ['red', 'blue', 'green', 'yellow'];
 let gamePattern = [];
 let userClickedPattern = [];
 let level = 0;
 let started = false;
 
+// Start game on any touch/click anywhere on screen
 $(document).on('touchstart click', function(e) {
-  if (!started && !$(e.target).hasClass('btn')) {
+  if (!started) {
     e.preventDefault();
     $('#level-title').text('Level ' + 0);
     nextSequence();
     started = true;
   }
 });
-$('.btn').click(function () {
+
+$('.btn').click(function (e) {
+  // Prevent this button click from starting the game
+  e.stopPropagation();
+  
   let userColorSelection = $(this).attr('id');
   userClickedPattern.push(userColorSelection);
   playSound(userColorSelection);
@@ -46,12 +49,10 @@ function nextSequence() {
   userClickedPattern = [];
   level++;
   $('#level-title').text('Level ' + level);
-
   // Add new random color to the pattern
   let randomNumber = Math.floor(Math.random() * 4);
   let randomChosenColor = buttonColors[randomNumber];
   gamePattern.push(randomChosenColor);
-
   // Play the entire sequence from the beginning
   playSequence();
 }
@@ -60,16 +61,13 @@ function playSequence() {
   let i = 0;
   let interval = setInterval(function () {
     let currentColor = gamePattern[i];
-
     // Animate and play sound for current color
     $('#' + currentColor)
       .fadeIn(100)
       .fadeOut(100)
       .fadeIn(100);
     playSound(currentColor);
-
     i++;
-
     // Stop the interval when we've played all colors
     if (i >= gamePattern.length) {
       clearInterval(interval);
@@ -78,7 +76,7 @@ function playSequence() {
 }
 
 function playSound(name) {
-  const audio = new Audio('sounds/' + name + '.mp3');
+  let audio = new Audio('sounds/' + name + '.mp3');
   audio.play();
 }
 
@@ -94,5 +92,3 @@ function animatedPress(currentColor) {
     $('#' + currentColor).removeClass('pressed');
   }, 100);
 }
-
-
