@@ -8,10 +8,9 @@ These games are simple projects that helped me improve my front-end development 
 
 ## Games Included
 
-- Game 1: [Name or brief description]
-- Game 2: [Name or brief description]
-- Game 3: [Name or brief description]
-- ...and more!
+- [Dicee Game](https://fares-learns.github.io/Dicee-game/)
+- [Drums Project](https://fares-learns.github.io/Drums/)
+- [Simon Says Game](https://fares-learns.github.io/Simon-Says/)
 
 ## Technologies Used
 
