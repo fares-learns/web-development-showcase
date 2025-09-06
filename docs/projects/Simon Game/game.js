@@ -6,8 +6,9 @@ let userClickedPattern = [];
 let level = 0;
 let started = false;
 
-$(document).keypress(function () {
-  if (!started) {
+$(document).on('touchstart click', function(e) {
+  if (!started && !$(e.target).hasClass('btn')) {
+    e.preventDefault();
     $('#level-title').text('Level ' + 0);
     nextSequence();
     started = true;
@@ -94,3 +95,4 @@ function animatedPress(currentColor) {
     $('#' + currentColor).removeClass('pressed');
   }, 100);
 }
+
