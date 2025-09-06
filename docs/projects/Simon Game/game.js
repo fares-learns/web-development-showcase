@@ -14,7 +14,6 @@ $(document).on('touchstart click', function(e) {
     started = true;
   }
 });
-
 $('.btn').click(function () {
   let userColorSelection = $(this).attr('id');
   userClickedPattern.push(userColorSelection);
@@ -95,4 +94,5 @@ function animatedPress(currentColor) {
     $('#' + currentColor).removeClass('pressed');
   }, 100);
 }
+
 
