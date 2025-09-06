@@ -40,7 +40,7 @@ function checkAnswer(currentLevel) {
     setTimeout(function () {
       $('body').removeClass('game-over');
     }, 200);
-    $('#level-title').text('Game Over, Press Any Key to Restart');
+    $('#level-title').text('Game Over, Touch Anywhere or press any key to Restart');
     startOver();
   }
 }
